@@ -28,14 +28,6 @@ export const router = createBrowserRouter([
     Component: Signup,
   },
   {
-    path: "/add-memory",
-    Component: AddMemory,
-  },
-  {
-    path: "/settings",
-    Component: Settings,
-  },
-  {
     path: "/home",
     Component: Layout,
     children: [
@@ -48,6 +40,12 @@ export const router = createBrowserRouter([
       { path: "place/:placeId", Component: PlaceDetails },
       { path: "guide/:guideId", Component: TourGuideProfile },
       { path: "challenges", Component: Challenges },
+      { path: "add-memory", Component: AddMemory },
+      { path: "settings", Component: Settings },
     ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/login" replace />,
   },
 ]);
