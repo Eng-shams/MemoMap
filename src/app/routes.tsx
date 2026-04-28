@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import { Layout } from "./components/Layout";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
@@ -12,8 +12,13 @@ import { PlaceDetails } from "./pages/PlaceDetails";
 import { TourGuideProfile } from "./pages/TourGuideProfile";
 import { Challenges } from "./pages/Challenges";
 import { AddMemory } from "./pages/AddMemory";
+import { Settings } from "./pages/Settings";
 
 export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navigate to="/login" replace />,
+  },
   {
     path: "/login",
     Component: Login,
@@ -27,7 +32,11 @@ export const router = createBrowserRouter([
     Component: AddMemory,
   },
   {
-    path: "/",
+    path: "/settings",
+    Component: Settings,
+  },
+  {
+    path: "/home",
     Component: Layout,
     children: [
       { index: true, Component: Home },

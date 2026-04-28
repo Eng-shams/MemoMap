@@ -13,9 +13,16 @@ export function PlaceDetails() {
   const filters = ["Top Rated", "Most Visited", "Trending", "Recent"];
 
   const memories = [
-    { id: 1, user: "Sarah Mohamed", avatar: "👩", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", likes: 234, comments: 12, caption: "Absolutely breathtaking! The pyramids are even more amazing in person.", time: "2 hours ago" },
-    { id: 2, user: "Omar Ahmed", avatar: "👨", image: "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=400&q=80", likes: 189, comments: 8, caption: "Sunset at the pyramids - a moment I'll never forget", time: "5 hours ago" },
-    { id: 3, user: "Lisa Johnson", avatar: "👱‍♀️", image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=400&q=80", likes: 567, comments: 23, caption: "The history here is incredible! Thanks to my amazing guide Ahmed.", time: "1 day ago" },
+    { id: 1, user: "Sarah Mohamed", avatar: "👩", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", likes: 234, comments: 12, caption: "Absolutely breathtaking! The pyramids are even more amazing in person. A must-see wonder of the world!", time: "2 hours ago" },
+    { id: 2, user: "Omar Ahmed", avatar: "👨", image: "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=400&q=80", likes: 189, comments: 8, caption: "Sunset at the pyramids - a moment I'll never forget. The golden light was magical.", time: "5 hours ago" },
+    { id: 3, user: "Lisa Johnson", avatar: "👱‍♀️", image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=400&q=80", likes: 567, comments: 23, caption: "The history here is incredible! Thanks to my amazing guide Ahmed for the fascinating stories.", time: "1 day ago" },
+    { id: 4, user: "Ahmed Hassan", avatar: "👨‍🦱", image: "https://images.unsplash.com/photo-1539768942893-daf53e448371?w=400&q=80", likes: 421, comments: 19, caption: "Standing before these ancient monuments never gets old. Every visit feels like the first time!", time: "2 days ago" },
+    { id: 5, user: "Fatima Ali", avatar: "👩", image: "https://images.unsplash.com/photo-1549471832-e8b5b0e9c21e?w=400&q=80", likes: 356, comments: 14, caption: "The scale is unbelievable! Photos don't do it justice. You have to see it yourself.", time: "3 days ago" },
+    { id: 6, user: "Mike Chen", avatar: "👨‍💼", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", likes: 289, comments: 11, caption: "Came here with my family and everyone was in awe. The kids loved learning about pharaohs!", time: "4 days ago" },
+    { id: 7, user: "Nour Ibrahim", avatar: "👩", image: "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=400&q=80", likes: 512, comments: 27, caption: "Early morning visit was perfect - fewer crowds and amazing lighting for photos!", time: "5 days ago" },
+    { id: 8, user: "David Martinez", avatar: "👨", image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=400&q=80", likes: 198, comments: 9, caption: "Bucket list item checked! The engineering behind these structures is mind-blowing.", time: "6 days ago" },
+    { id: 9, user: "Layla Hassan", avatar: "👩", image: "https://images.unsplash.com/photo-1539768942893-daf53e448371?w=400&q=80", likes: 387, comments: 18, caption: "This place exceeded all my expectations. The craftsmanship is incredible!", time: "1 week ago" },
+    { id: 10, user: "John Smith", avatar: "👨", image: "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=80", likes: 456, comments: 24, caption: "Traveled from the US just to see this. Worth every mile!", time: "1 week ago" },
   ];
 
   const guides = [
@@ -33,7 +40,7 @@ export function PlaceDetails() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <Link
-          to="/map"
+          to="/home/map"
           className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
         >
           <ArrowLeft className="w-5 h-5 text-white" />
@@ -107,7 +114,7 @@ export function PlaceDetails() {
         </div>
 
         {activeTab === "memories" && (
-          <div className="space-y-4">
+          <div className="space-y-4 max-h-[60vh] overflow-y-auto pb-20">
             {memories.map((memory) => (
               <div key={memory.id} className="bg-card rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="p-4 flex items-center gap-3">
@@ -149,7 +156,7 @@ export function PlaceDetails() {
             {guides.map((guide) => (
               <Link
                 key={guide.id}
-                to={`/guide/${guide.id}`}
+                to={`/home/guide/${guide.id}`}
                 className="block bg-card rounded-2xl p-4 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="flex items-center gap-4">

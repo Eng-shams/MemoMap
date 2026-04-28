@@ -43,7 +43,7 @@ export function Challenges() {
   return (
     <div className="min-h-screen bg-background pb-8">
       <div className="bg-gradient-to-b from-secondary to-secondary/90 text-white px-6 py-6 rounded-b-3xl shadow-lg">
-        <Link to="/" className="inline-block mb-4">
+        <Link to="/home" className="inline-block mb-4">
           <ArrowLeft className="w-6 h-6" />
         </Link>
         <h1 className="text-2xl font-bold mb-2">Challenges & Rewards</h1>

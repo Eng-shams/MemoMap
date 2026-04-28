@@ -57,13 +57,13 @@ export function Home() {
           </div>
           <div className="flex gap-3">
             <Link
-              to="/notifications"
+              to="/home/notifications"
               className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
             >
               <Bell className="w-5 h-5" />
             </Link>
             <Link
-              to="/chat"
+              to="/home/chat"
               className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
@@ -84,7 +84,7 @@ export function Home() {
       <div className="px-6 py-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl text-secondary">Explore Cities</h2>
-          <Link to="/challenges" className="text-sm text-primary hover:text-accent transition-colors">
+          <Link to="/home/challenges" className="text-sm text-primary hover:text-accent transition-colors">
             View Challenges
           </Link>
         </div>
@@ -93,7 +93,7 @@ export function Home() {
           {governorates.map((gov, index) => (
             <Link
               key={gov.name}
-              to={`/city/${gov.name.toLowerCase()}`}
+              to={`/home/city/${gov.name.toLowerCase()}`}
               className="block group"
               style={{ animationDelay: `${index * 100}ms` }}
             >

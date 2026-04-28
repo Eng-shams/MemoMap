@@ -10,6 +10,7 @@ const cityData: Record<string, { description: string; places: Array<{ id: number
       { id: 3, name: "Cairo Tower", image: "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=800&q=80", rating: 4.6, preview: "Panoramic views of the entire city from above" },
       { id: 6, name: "Al-Azhar Mosque", image: "https://images.unsplash.com/photo-1539768942893-daf53e448371?w=800&q=80", rating: 4.9, preview: "One of the oldest mosques in Egypt" },
       { id: 7, name: "Citadel of Saladin", image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?w=800&q=80", rating: 4.7, preview: "Medieval Islamic fortification with stunning architecture" },
+      { id: 22, name: "Maadi", image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80", rating: 4.5, preview: "Peaceful green suburb with tree-lined streets and cafes" },
     ],
   },
   giza: {
@@ -24,9 +25,11 @@ const cityData: Record<string, { description: string; places: Array<{ id: number
   alexandria: {
     description: "Mediterranean pearl of Egypt",
     places: [
-      { id: 10, name: "Bibliotheca Alexandrina", image: "https://images.unsplash.com/photo-1592240549908-0a0efa9c7c90?w=800&q=80", rating: 4.8, preview: "Modern revival of the ancient Library of Alexandria" },
+      { id: 10, name: "Stanley Bridge", image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80", rating: 4.8, preview: "Iconic bridge with stunning Mediterranean views" },
       { id: 11, name: "Qaitbay Citadel", image: "https://images.unsplash.com/photo-1592240549908-0a0efa9c7c90?w=800&q=80", rating: 4.7, preview: "15th-century fortress on the Mediterranean" },
-      { id: 12, name: "Montaza Palace", image: "https://images.unsplash.com/photo-1592240549908-0a0efa9c7c90?w=800&q=80", rating: 4.6, preview: "Royal gardens and palace by the sea" },
+      { id: 12, name: "Alexandria Corniche", image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&q=80", rating: 4.9, preview: "Beautiful coastal promenade stretching along the sea" },
+      { id: 23, name: "Montaza Beach", image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80", rating: 4.6, preview: "Sandy beaches and royal palace gardens" },
+      { id: 24, name: "Bibliotheca Alexandrina", image: "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=800&q=80", rating: 4.7, preview: "Modern architectural marvel and cultural center" },
     ],
   },
   luxor: {
@@ -69,7 +72,7 @@ export function CityDetails() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <Link
-          to="/"
+          to="/home"
           className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
         >
           <ArrowLeft className="w-5 h-5 text-white" />
@@ -124,7 +127,7 @@ export function CityDetails() {
 
                   <div className="flex gap-2">
                     <Link
-                      to={`/map?place=${place.id}&name=${encodeURIComponent(place.name)}`}
+                      to={`/home/map?place=${place.id}&name=${encodeURIComponent(place.name)}`}
                       className="flex-1 bg-gradient-to-r from-primary to-accent text-white py-2.5 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
                     >
                       <MapPin className="w-4 h-4" />
@@ -134,7 +137,7 @@ export function CityDetails() {
                       <Bookmark className="w-4 h-4" />
                     </button>
                     <Link
-                      to={`/map?place=${place.id}&name=${encodeURIComponent(place.name)}&directions=true`}
+                      to={`/home/map?place=${place.id}&name=${encodeURIComponent(place.name)}&directions=true`}
                       className="bg-white/20 backdrop-blur-md border border-white/30 text-white p-2.5 rounded-xl hover:bg-white/30 transition-all"
                     >
                       <Navigation2 className="w-4 h-4" />

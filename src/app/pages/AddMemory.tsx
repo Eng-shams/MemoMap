@@ -24,7 +24,7 @@ export function AddMemory() {
   };
 
   const handlePost = () => {
-    navigate("/map");
+    navigate("/home/map");
   };
 
   return (

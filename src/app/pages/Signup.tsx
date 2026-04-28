@@ -46,7 +46,11 @@ export function Signup() {
   };
 
   const handleSubmit = () => {
-    navigate("/");
+    navigate("/login");
+  };
+
+  const handleSkipPayment = () => {
+    setCurrentStep(5);
   };
 
   const togglePayment = (method: string) => {
@@ -277,18 +281,35 @@ export function Signup() {
                 </button>
               )}
               {currentStep < 5 ? (
-                <button
-                  onClick={handleNext}
-                  className="flex-1 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
-                >
-                  {currentStep === 4 ? "Skip" : "Next"}
-                </button>
+                currentStep === 4 ? (
+                  <>
+                    <button
+                      onClick={handleSkipPayment}
+                      className="flex-1 py-3 border border-border rounded-xl hover:bg-muted transition-colors"
+                    >
+                      Skip
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="flex-1 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
+                    >
+                      Next
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={handleNext}
+                    className="flex-1 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  >
+                    Next
+                  </button>
+                )
               ) : (
                 <button
                   onClick={handleSubmit}
                   className="flex-1 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  Complete
+                  Complete Signup
                 </button>
               )}
             </div>

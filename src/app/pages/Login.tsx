@@ -12,7 +12,7 @@ export function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/home");
   };
 
   return (
@@ -32,7 +32,8 @@ export function Login() {
           </div>
 
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
-            <h2 className="text-2xl mb-6 text-center text-secondary">Welcome Back</h2>
+            <h2 className="text-2xl mb-2 text-center text-secondary">Welcome Back</h2>
+            <p className="text-sm text-center text-muted-foreground mb-6">Login to explore Egypt</p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>

@@ -21,7 +21,10 @@ export function Profile() {
     <div className="min-h-screen bg-background pb-8">
       <div className="bg-gradient-to-b from-secondary to-secondary/90 text-white px-6 pt-6 pb-12 rounded-b-3xl shadow-lg">
         <div className="flex justify-end mb-6">
-          <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors">
+          <button
+            onClick={() => window.location.href = "/settings"}
+            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
+          >
             <Settings className="w-5 h-5" />
           </button>
         </div>
